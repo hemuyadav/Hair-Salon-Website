@@ -1,0 +1,282 @@
+<html>
+    <head>
+        <title>Barber website</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <link  href="script.js">
+    <link rel = "stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel ="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@200&display=swap" rel="stylesheet">
+   
+    <meta name="viewport" content="width=device-width initial-scale=1"> <!--for responsiveness-->
+
+    <script>
+        function opnNav(){
+            document.getElementById("navigation").style.width= "200px";
+         
+        }
+        function closeNav(){
+            document.getElementById("navigation").style.width="0px";
+        }
+        function close(){
+            document.getElementById("navigation").style.width="-12px";
+        }
+       
+        var users =[
+            {UserName :'hemant' , Password :'12345'},
+            {UserName : 'kamal',Password :"1234"},
+            {UserName :'golu', Password : "123"},
+            {UserName : 'mitansh', Password : "12"}
+        ];
+        function verifyUser(){
+            var username= document.getElementById("txtName").value;
+            var password = document.getElementById("txtPassword").value;
+            for (var user of users)
+            {
+                if(user.UserName===username && user.Password===password){
+                    document.getElementById("msg").innerHTML ="Login Successfully"
+                }
+                else{
+                    document.getElementById("msg").innerHTML = "Invalid user";
+                    }
+               }
+            }
+        
+        </script>
+</head>
+    <body  onload="closeNav()" >
+        
+        <section id="banner">
+            <img src="images/logo.png" class="logo">
+            <div class="banner-text">
+                <h1>Hair Studio</h1>
+                <p>Styling Your Hair Is Styling Your Life</p>
+                <div class="banner-btn" class="container-fluid">
+                    
+                    <a class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    <a href="#feedback" class="btn btn-outline-light">Read More</a>
+                    <div class="modal fade" id="loginModal">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2>User Login</h2>
+                                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                                  
+                                </div>
+                                 <div class="modal-body">
+                                    <dl>
+                                        <dt>User Name</dt>
+                                        <dd><input type="text" id="txtName"></dd>
+                                        <dt>Password</dt>
+                                        <dd><input type="password" id="txtPassword"></dd>
+                                        <h4 id="msg" class="text-danger"></h4>
+                                    </dl>
+                                 </div>
+                                 <div class="modal-footer">
+                                    
+                                    <button class="btn btn-primary" onclick="verifyUser()">Login</button>
+                                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                    
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            
+</section>
+
+
+<div id="navigation" onload="close()">
+    
+    <span onclick="closeNav()" class="bi bi-x-square-fill" id = "btn-close" ></span>
+    <nav>
+        <ul>
+            <li><a href="#banner"> Home</a></li>
+            <li><a href="#feature"> Features</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#footer" >Contact</a></li>
+      </ul></nav>
+    </div>
+    <div>
+        <button onclick="opnNav()" id="list" class="bi bi-list">
+        </button>
+    </div>
+
+<!-- code for feature-->
+<section id="feature">
+<div class= "title-text">
+    <p>FEATURES</p>
+    <h1>Why Choose Us ?</h1>
+</div>
+
+<div class= "features-box">
+<div class = "features">
+    
+    <h1 class="bi bi-arrow-right-square-fill " id="f-icon" > &nbsp Experienced Staff</h1>
+    <div class="features-desc">
+      <p> Best  barber worker of your city with professional Experience  and with Certified workers.</p>
+        </div>
+
+        <h1 class="bi bi-arrow-right-square-fill " id="f-icon" > &nbsp Pre Booking Online</h1>
+        <div class="features-desc">
+        <p> Pre bookings are availables and we are always on time so you don't need to waste your time in grooming . </p>
+            </div>
+
+            <h1 class="bi bi-arrow-right-square-fill " id="f-icon" > &nbsp Addorable Price</h1>
+            <div class="features-desc">
+             <p> Our price is adorable , No extra charge or home service charges was taken to you.</p>
+                </div>
+                
+    </div>
+<div class="features-img">
+<img src="images/barber-man.jpg">
+</div>
+
+</div>
+</section>
+
+<!-- code for feature-->
+
+<!--code for service section-->
+
+<section id ="service">
+    <div class= "title-text">
+        <p>SERVICES</p>
+        <h1>We Provide Better</h1>
+    </div>
+
+    <div class="service-box">
+        <div class="service-img">
+            <img src="images/pic-4.jpg">
+            
+            <div class="overlay">
+                <div class="service-desc">
+                    <h3>Hair Wash</h3>
+                    <hr id="hrline">
+                    <p>vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesen. 
+                        own home.</p>
+            </div>
+            </div>
+        </div>
+        <div class="service-img">
+            <img src="images/pic-2.jpg">
+            <div class="overlay">
+                <div class="service-desc">
+                    <h3>Beard Trim</h3>
+                    <hr id="hrline">
+                    <p>enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="service-img">
+            <img src="images/pic-3.jpg">
+            <div class="overlay">
+                <div class="service-desc">
+                    <h3>Hair Spa</h3>
+                    <hr id="hrline">
+                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
+                   </div>
+            </div>
+     </div>
+        <div class="service-img">
+            <img src="images/pic-1.jpg">
+            <div class="overlay">
+                <div class="service-desc">
+                    <h3>Hair Cut</h3>
+                    <hr id="hrline">
+                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam.</p>
+                   </div>
+                </div>
+        </div>
+
+
+    </div>
+</section>
+<!--end of service section-->
+
+<!--code for feedback section-->
+<section id ="feedback">
+     <div class= "title-text">
+            <p>FEEDBACK</p>
+            <h1>What Client Says</h1>
+        </div>
+        <div class="feedback-row">
+            <div class="feedback-col">
+                <div class="fdb-image">
+                    <img src ="images/img-1.jpg">
+                    <div class="user-info">
+                        <h5>Michel  <i class="bi bi-twitter" id ="fk-icon"></i></h5>
+                        <small>@michal</small>
+                    </div>
+                </div>
+            <p>aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+        </div>
+            
+        <div class="feedback-col">
+                <div class="fdb-image">
+                    <img src = "images/img-2.jpg">
+                    <div class="user-info">
+                        <h5>Ananya<i class="bi bi-twitter" id ="fk-icon"></i></h5>
+                        <small>@Ananya</small>
+                    </div>
+                </div>
+            <p>voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non </p>.
+        </div>
+            
+        <div class="feedback-col">
+                <div class="fdb-image">
+                    <img src ="images/img-3.jpg">
+                    <div class="user-info">
+                        <h5>smith <i class="bi bi-twitter" id ="fk-icon"></i></h5>
+                        <small>@smith</small>
+                    </div>
+                </div>
+            <p>aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        </div></div>
+</section>
+
+<!--end of feedback section-->
+
+<!--code for footer section-->
+<section id ="footer">
+    <img src="images/footer-img.png" class="footer-img">
+    <div class= "title-text">
+        <p>CONTACT</p>
+        <h1>Visit Our Shop Today</h1>
+    </div>
+    
+    <div class= "footer-row">
+        <div class = footer-left>
+        <h1>Opening Hours</h1>
+        <p><i class="bi bi-stopwatch "style="color:#009688"></i> &nbsp Monday to Friday - 9am to 7pm </p>
+        <p><i class="bi bi-stopwatch"style="color:#009688"></i>&nbsp Saturdy to sunday - 8am to 9pm </p>
+    </div>
+
+        <div class = footer-right>
+        <h1>Get In Touch</h1>
+        <p>Mansrover 101 Nikaten Vihar <i class="bi bi-geo-alt" style ="color :#009688; font-size :20px;"></i></p>
+        <p>barber@home.com  <i class="bi bi-telegram" style ="color :#009688; font-size :20px;"></i></p>
+        <p>+91-9876553731 &nbsp<i class="bi bi-telephone"  style ="color :#009688; font-size :20px;"></i>
+        </p>
+    </div>
+    </div>
+    <div class="social-media">
+
+       <a href="https://www.facebook.com/" target="blank"><button class="btn btn-outline-primary"><i class="bi bi-facebook" id="s-icon"></i></button></a>
+       <a href="https://www.instagram.com/"target="blank"><button class="btn btn-outline-danger"><i class="bi bi-instagram" id="s-icon"></i></button></a>
+       <a href="https://www.twitter.com/"target="blank"> <button class="btn btn-outline-primary"><i class="bi bi-twitter" id="s-icon"></i></button></a>
+       <a href="https://www.youtube.com/"target="blank"><button class="btn btn-outline-danger"><i class="bi bi-youtube" id="s-icon"></i></button></a>
+    
+       <p>copyright @my website</p>
+    </div>
+</section>
+</div>
+<script src="../../node_modules/jquery/dist/jquery.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
